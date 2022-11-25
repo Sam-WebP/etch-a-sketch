@@ -1,0 +1,24 @@
+
+#container-container {
+    display: block;
+ margin-left: auto;
+  margin-right: auto;
+}
+
+
+#grid-container {
+    display: flex;
+    border: 0px solid;
+    width: 20%;
+    flex-wrap: nowrap;
+    display
+}
+
+.box {
+    display: 1;
+    padding: 3%;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
