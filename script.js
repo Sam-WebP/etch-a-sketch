@@ -12,12 +12,12 @@ let slider = document.getElementById("myRange");
 let sliderOutput = 16
 let gridSize
 
-let boxContain = document.createElement('div')
-let box = document.createElement('div')
+
 
 slider.oninput = function() {
     sliderOutput = this.value;
     createGridContainer(sliderOutput);
+    document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{event.target.style.backgroundColor = "purple";}));
   }
 
 //function that creates 16x16 grid on load of the window
@@ -49,7 +49,7 @@ document.querySelectorAll(".containClass").forEach(e => e.remove());
         box.style.display = 'flex';
         box.style.flexGrow = '1';
         box.style.padding = 'auto';
-        box.style.border = '1px solid grey';
+        //box.style.border = '1px solid grey';
         box.style.backgroundColor = 'black';
         box.classList.add('boxClass');
         boxContain.appendChild(box);
@@ -57,8 +57,6 @@ document.querySelectorAll(".containClass").forEach(e => e.remove());
 }
 }
 }
-
-/////////////////
 
 function firstLoad() {
 
@@ -80,11 +78,13 @@ function firstLoad() {
         box.style.display = 'flex';
         box.style.flexGrow = '1';
         box.style.padding = 'auto';
-        box.style.border = '1px solid grey';
+        //box.style.border = '1px solid grey';
         box.style.backgroundColor = 'black';
         box.classList.add('boxClass');
+        document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{event.target.style.backgroundColor = "purple";}));
         boxContain.appendChild(box);
 
 }
 }
 }
+
