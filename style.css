@@ -1,24 +1,29 @@
+h1 {
+    text-align: center;
+    font-weight: 900;
+}
 
 #container-container {
-    display: block;
- margin-left: auto;
-  margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
-#grid-container {
+.grid-container {
     display: flex;
     border: 0px solid;
-    width: 20%;
-    flex-wrap: nowrap;
-    display
+    width: 30%;
 }
 
 .box {
     display: 1;
     padding: 3%;
-    border: 1px solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: 1px solid grey;
+    
+}
+
+.box:hover {
+    background-color: red;
 }
