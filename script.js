@@ -12,12 +12,13 @@ let slider = document.getElementById("myRange");
 let sliderOutput = 16
 let gridSize
 
-
+let currentMode = 'yellow'
+let testColour = 'white'
 
 slider.oninput = function() {
     sliderOutput = this.value;
     createGridContainer(sliderOutput);
-    document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{event.target.style.backgroundColor = "white";}));
+    document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{event.target.style.backgroundColor = 'white';}));
   }
 
 //function that creates 16x16 grid on load of the window
@@ -82,10 +83,29 @@ function firstLoad() {
         //box.style.border = '1px solid grey';
         box.style.backgroundColor = 'black';
         box.classList.add('boxClass');
-        document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{event.target.style.backgroundColor = "White";}));
+        document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{event.target.style.backgroundColor = 'white';}));
         boxContain.appendChild(box);
 
 }
 }
 }
 
+let rainbowButton = document.querySelector(".button-85")
+rainbowButton.addEventListener("click", function() {makeRainbow();})
+
+let basicButton = document.querySelector(".basic")
+basicButton.addEventListener("click", function() {makeBasic()})
+
+const psychedelicPallete = ['red', 'orange', 'aqua', 'blue', 'green', 'yellow', 'pink', 'purple'];
+
+function makeRainbow() {
+  document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{
+    event.target.style.backgroundColor = psychedelicPallete[Math.floor((Math.random() * 8) + 1)];
+  }));
+}
+
+function makeBasic() {
+  document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{
+    event.target.style.backgroundColor = 'white';
+  }));
+}

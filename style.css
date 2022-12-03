@@ -5,6 +5,10 @@
 body {
   display: flex;
   justify-content: center;
+  background-image: url('https://wallpaperaccess.com/full/17520.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
 }
 
 #page-content {
