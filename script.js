@@ -17,12 +17,13 @@ let gridSize
 slider.oninput = function() {
     sliderOutput = this.value;
     createGridContainer(sliderOutput);
-    document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{event.target.style.backgroundColor = "purple";}));
+    document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{event.target.style.backgroundColor = "white";}));
   }
 
 //function that creates 16x16 grid on load of the window
 window.onload = function() {
     firstLoad();
+    sliderOutput = 16
   };
   
 function createGridContainer (gridSize) {
@@ -81,7 +82,7 @@ function firstLoad() {
         //box.style.border = '1px solid grey';
         box.style.backgroundColor = 'black';
         box.classList.add('boxClass');
-        document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{event.target.style.backgroundColor = "purple";}));
+        document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{event.target.style.backgroundColor = "White";}));
         boxContain.appendChild(box);
 
 }
