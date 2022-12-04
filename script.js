@@ -12,9 +12,6 @@ let slider = document.getElementById("myRange");
 let sliderOutput = 16
 let gridSize
 
-let currentMode = 'yellow'
-let testColour = 'white'
-
 slider.oninput = function() {
     sliderOutput = this.value;
     createGridContainer(sliderOutput);
@@ -96,16 +93,36 @@ rainbowButton.addEventListener("click", function() {makeRainbow();})
 let basicButton = document.querySelector(".basic")
 basicButton.addEventListener("click", function() {makeBasic()})
 
+
 const psychedelicPallete = ['red', 'orange', 'aqua', 'blue', 'green', 'yellow', 'pink', 'purple'];
 
+let currentMode = "basic"
+
 function makeRainbow() {
+  currentMode = "rainbow"
   document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{
     event.target.style.backgroundColor = psychedelicPallete[Math.floor((Math.random() * 8) + 1)];
   }));
+  
 }
 
 function makeBasic() {
+  currentMode = "basic"
   document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{
     event.target.style.backgroundColor = 'white';
+    
   }));
 }
+
+let bin = document.querySelector(".bin-reset")
+bin.addEventListener("click", function() {
+  document.querySelectorAll(".containClass").forEach(e => e.remove());
+  createGridContainer(sliderOutput);
+  if (currentMode == "basic") {
+    makeBasic()
+    console.log(currentMode)
+  } else if (currentMode == "rainbow") {
+    makeRainbow()
+    console.log(currentMode)
+  }
+})

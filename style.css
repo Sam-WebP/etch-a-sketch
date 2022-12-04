@@ -9,6 +9,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;  
   background-size: cover;
+  align-items: center;
 }
 
 #page-content {
@@ -18,16 +19,30 @@ body {
   max-width: 500px;
 }
 
-.animate-charcter
+.animate-rainbow
 {
    text-transform: uppercase;
-  background-image: linear-gradient(
-    -225deg,
-    #000000 0%,
-    #000000 29%,
-    #d6d6d6 67%,
-    #ffffff 100%
-  );
+  background-image: linear-gradient(-225deg,#ff0000 0%,#f5089a 29%,#1100ff 67%,#00ffd5 100%);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: rgb(255, 255, 255);
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 20s linear infinite;
+  display: inline-block;
+      font-size: 50px;
+}
+
+.animate-basic
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(-225deg,#000000 0%,#000000 29%,#d6d6d6 67%,#ffffff 100%);
   margin-top: 20px;
   margin-bottom: 20px;
   background-size: auto auto;
@@ -109,8 +124,8 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin: 15px;
-  margin-top: 30px;
+  margin: 5px;
+  margin-top: 20px;
 }
 
 .button-85:before {
@@ -178,8 +193,8 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin: 15px;
-  margin-top: 30px;
+  margin: 5px;
+  margin-top: 20px;
 }
 
 .basic:before {
@@ -222,8 +237,68 @@ body {
   border-radius: 10px;
 }
 
+
+
 #master-container {
   width: 1000px;
   box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
+  }
+
+
+  .bin-reset {
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 5px;
+    margin-top: 20px;
+  }
+  
+  .bin-reset:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #3b0000,
+      #3a0000,
+      #720000,
+      #820000,
+      #a30000,
+      #a70000,
+      #ca0000,
+      #ef0000,
+      #ff0101
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  .bin-reset:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
   }
