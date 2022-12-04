@@ -77,6 +77,14 @@ body {
     
   }
   
+.slider-text {
+  position: absolute;
+  margin-top: 3px;
+  font-weight: 900;
+  color: #111;
+  margin: 5px;
+}
+
   .slider {
     width: 352px;
     height: 25px;
@@ -85,6 +93,7 @@ body {
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
+    position: relative;
   }
   
   .slider:hover {
@@ -97,7 +106,9 @@ body {
     height: 25px;
     background: #000000;
     cursor: pointer;
+    
   }
+  
 
 .boxClass:hover {
     background-color: red;

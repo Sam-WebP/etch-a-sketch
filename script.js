@@ -16,6 +16,13 @@ slider.oninput = function() {
     sliderOutput = this.value;
     createGridContainer(sliderOutput);
     document.querySelectorAll(".boxClass").forEach(e => e.addEventListener("mouseover", (event) =>{event.target.style.backgroundColor = 'white';}));
+    if (currentMode == "basic") {
+      makeBasic()
+      console.log(currentMode)
+    } else if (currentMode == "rainbow") {
+      makeRainbow()
+      console.log(currentMode)
+    }
   }
 
 //function that creates 16x16 grid on load of the window
